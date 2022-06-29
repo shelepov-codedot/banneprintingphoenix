@@ -27,7 +27,7 @@ if ( strpos( $original_request, 'uucss/uucss-' ) !== false ) {
 }
 
 $fallback_target  = preg_replace( '/(.*)_(?:[a-z0-9]{32})\.(js|css)$/', '${1}_fallback.${2}', $original_request );
-$ao_cache_dir     = '/home/w1dk8wml86vv/public_html/bannerprintingsanfrancisco.com/wp-content/cache/autoptimize/';
+$ao_cache_dir     = '/home/w1dk8wml86vv/public_html/bannerprintingphoenix.com/wp-content/cache/autoptimize/';
 $js_or_css        = pathinfo( $original_request, PATHINFO_EXTENSION );
 
 // add multisite logic.

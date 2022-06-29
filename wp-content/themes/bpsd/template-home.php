@@ -17,16 +17,16 @@ $home_content = get_field('home_content');
                     "@type": "ListItem",
                     "position": 1,
                     "item": {
-                        "@id": "https://bannerprintingsanfrancisco.com",
-                        "name": "Banner Printing San Francisco"
+                        "@id": "https://bannerprintingphoenix.com",
+                        "name": "Banner Printing Phoenix"
                     }
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
                     "item": {
-                        "@id": "https://bannerprintingsanfrancisco.com/#promotion",
-                        "name": "💡 Banner Printing in San Francisco!"
+                        "@id": "https://bannerprintingphoenix.com/#promotion",
+                        "name": "💡 Banner Printing in Phoenix!"
                     }
                 }
             ]
@@ -57,7 +57,6 @@ $home_content = get_field('home_content');
     <section class="home__categories">
         <div class="container">
 
-            <h2 class="home__section-title"><?php echo $home_categories['title']; ?></h2>
             <?php if ($home_categories['categories']): ?>
                 <ul class="home__category-list">
                     <?php foreach ($home_categories['categories'] as $item): ?>
@@ -79,11 +78,12 @@ $home_content = get_field('home_content');
                     <?php foreach ($home_process['list'] as $item): ?>
                         <li class="process-block__item">
                             <div class="process-block__counter">
-                                <b class="process-block__title"><?php echo $item['title']; ?></b>
                                 <span>
-                            <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['title'] ?>"
-                                 class="process-block__image">
-                        </span>
+                                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['title'] ?>"
+                                         class="process-block__image">
+                                </span>
+                                <b class="process-block__title"><?php echo $item['title']; ?></b>
+                                <p><?php echo $item['info']; ?></p>
                             </div>
 
                         </li>

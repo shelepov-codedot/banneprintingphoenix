@@ -1608,7 +1608,7 @@ class WC_AJAX {
 					$memberEmail[] = $member;
 				}
 
-                wp_mail($memberEmail, 'You were mentioned in the comment for order #'.$order.' - Banner Printing San Francisco', $message, '', $attachments );
+                wp_mail($memberEmail, 'You were mentioned in the comment for order #'.$order.' - Banner Printing Phoenix', $message, '', $attachments );
 			}
 
 

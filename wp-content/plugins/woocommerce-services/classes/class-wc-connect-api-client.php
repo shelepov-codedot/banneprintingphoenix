@@ -224,7 +224,7 @@ if ( ! class_exists( 'WC_Connect_API_Client' ) ) {
 		 *  'origin' => array(
 		 *      'address' => '132 Hawthorne St',
 		 *      'address_2' => '',
-		 *      'city' => 'San Francisco',
+		 *      'city' => 'Phoenix',
 		 *      'state' => 'CA',
 		 *      'postcode' => '94107',
 		 *      'country' => 'US',

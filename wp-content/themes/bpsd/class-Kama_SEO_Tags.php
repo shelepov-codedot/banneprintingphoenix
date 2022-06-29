@@ -324,7 +324,7 @@ class Kama_SEO_Tags
             }
 
             if (!is_page()) {
-                $parts['title'] = 'San Francisco ' . $parts['title'].' printing - best price';
+                $parts['title'] = 'Phoenix ' . $parts['title'].' printing - best price';
             }
 
             if ($cpage = get_query_var('cpage')) {
@@ -350,7 +350,7 @@ class Kama_SEO_Tags
                 if (is_tax()) {
 
 //                    echo 'prev 2';
-                    $parts['prev'] = 'San Francisco';//get_taxonomy( $term->taxonomy )->labels->name;
+                    $parts['prev'] = 'Phoenix ';//get_taxonomy( $term->taxonomy )->labels->name;
                     $parts['title'] .= ' printing - best price';
                 }
             }
@@ -411,7 +411,7 @@ class Kama_SEO_Tags
         }
 
         if ($post->ID != 79) {
-            $parts['after'] = '| bannerprintingsanfrancisco.com';
+            $parts['after'] = '| bannerprintingphoenix.com';
         } else {
             $parts['after'] = '';
         }
@@ -470,7 +470,7 @@ class Kama_SEO_Tags
             // когда для главной установлена страница
             if (is_page()) {
                 //$desc = get_post_meta($post->ID, 'description', true);
-                $desc = 'Print Banners in San Francisco to promote your Business or Event ⚡️ Free San Francisco Delivery ✅ Call Us 📱 +1 323-916-8556';
+                $desc = 'Print Banners in Phoenix to promote your Business or Event ⚡️ Free Phoenix Delivery ✅ Call Us 📱 +1 480-885-6844 ';
                 $need_cut = false;
             }
 
@@ -492,11 +492,11 @@ class Kama_SEO_Tags
 
             if (!$desc) {
                 //$desc = $post->post_excerpt ?: $post->post_content;
-                $desc = 'Print ' . $post->post_title . ' in San Francisco ✅ Full color printing ✅ 🔥 Free San Francisco Delivery 🔥 Call us 📱 +1 323-916-8556';
+                $desc = 'Print ' . $post->post_title . ' in Phoenix ✅ Full color printing ✅ 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
             }
 
             if (get_post_type($post->ID) == 'page') {
-                $desc = $post->post_title . ' ✅ Full color printing ✅ 🔥 Free San Francisco Delivery 🔥 Call us 📱 +1 323-916-8556';
+                $desc = $post->post_title . ' ✅ Full color printing ✅ 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
             }
 
             $desc = trim(strip_tags($desc));
@@ -563,7 +563,7 @@ class Kama_SEO_Tags
             $title = single_term_title('', 0);
 
             if (is_tax()) {
-                $desc = 'Print '.$title.' in San Francisco for Indoor and Outdoor Advertising 🔥 Free San Francisco Delivery 🔥 Call us 📱 +1 323-916-8556';
+                $desc = 'Print '.$title.' in Phoenix for Indoor and Outdoor Advertising 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
             }
         }
 

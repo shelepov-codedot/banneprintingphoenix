@@ -195,8 +195,8 @@ add_action('wp_ajax_nopriv_form_send', 'form_send');
 
 function form_send()
 {
-    $to = 'contact@bannerprintingsanfrancisco.com';
-    $subject = 'Completed contact form with https://bannerprintingsanfrancisco.com/';
+    $to = 'contact@bannerprintingphoenix.com';
+    $subject = 'Completed contact form with https://bannerprintingphoenix.com/';
     $name = $_POST['name'];
     $type = $_POST['type'];
     $email_message = $_POST['message'];
@@ -208,7 +208,7 @@ function form_send()
     $scanned_directory = array_diff(scandir($uploaddir), array('..', '.'));
 
     foreach ($scanned_directory as $file) {
-        $img_url = 'https://bannerprintingsanfrancisco.com/user_print/contact/'.$id.'/'.$file;
+        $img_url = 'https://bannerprintingphoenix.com/user_print/contact/'.$id.'/'.$file;
         $message .= "<img height='320px' src='$img_url'>";
     }
 
@@ -509,7 +509,7 @@ function admin_generation_order() {
 
     $wpdb->query("INSERT INTO `wp_custom_order` (`href`, `data`) VALUES ('{$href_order}', '{$dataJson}');");
 
-    $url = 'https://bannerprintingsanfrancisco.com/checkout/?order='.$href_order;
+    $url = 'https://bannerprintingphoenix.com/checkout/?order='.$href_order;
     admin_send_order_on_mail($user_email, $data, $url);
 
     echo json_encode([

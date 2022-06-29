@@ -305,7 +305,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.'
 
 			$first_page .= "<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>";
 			/* translators: First page content. */
-			$first_page .= __( "Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in San Francisco, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)" );
+			$first_page .= __( "Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Phoenix, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)" );
 			$first_page .= "</p></blockquote>\n<!-- /wp:quote -->\n\n";
 
 			$first_page .= "<!-- wp:paragraph -->\n<p>";

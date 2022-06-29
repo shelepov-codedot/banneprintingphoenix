@@ -96,10 +96,10 @@
 
     <div class="footer">
         <div class="footer-thankyou">Thank you for shopping with us!</div>
-        <div class="footer-name">Banner Printing San Francisco</div>
-        <div class="footer-address">350 Bay Street Ste 100, San Francisco, CA 94133</div>
-        <div class="footer-email">contact@bannerprintingsanfrancisco.com</div>
-        <div class="footer-site">bannerprintingsanfrancisco.com</div>
+        <div class="footer-name">Banner Printing Phoenix</div>
+        <div class="footer-address">522 N Central Ave Lbby, Phoenix, AZ 85004</div>
+        <div class="footer-email">contact@bannerprintingphoenix.com</div>
+        <div class="footer-site">bannerprintingphoenix.com</div>
     </div>
 
 <?php do_action( 'wpo_wcpdf_after_document', $this->get_type(), $this->order ); ?>

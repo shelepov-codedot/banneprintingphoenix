@@ -114,7 +114,7 @@ if (!empty($attribute_keys)) {
                     "availability": "http://schema.org/InStock",
                     "seller": {
                         "@type": "Organization",
-                        "name": "https://bannerprintingsanfrancisco.com/"
+                        "name": "https://bannerprintingphoenix.com/"
                     }
                 }
             }
@@ -129,8 +129,8 @@ if (!empty($attribute_keys)) {
                     <?php  foreach( $attachment_ids as $attachment_id ): ?>
                     <img class="product__image"
                         src=<?php echo $attachment_id;?>
-                        alt="San Francisco <?= the_title(); ?> Printing"
-                        title="San Francisco <?= the_title(); ?> Printing"
+                        alt="Phoenix <?= the_title(); ?> Printing"
+                        title="Phoenix <?= the_title(); ?> Printing"
                     >
                     <?php endforeach; ?>
                 </ul>

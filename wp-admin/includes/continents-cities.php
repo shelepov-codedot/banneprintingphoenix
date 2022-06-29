@@ -156,7 +156,7 @@ __( 'Knox IN', 'continents-cities' );
 __( 'Kralendijk', 'continents-cities' );
 __( 'La Paz', 'continents-cities' );
 __( 'Lima', 'continents-cities' );
-__( 'San Francisco', 'continents-cities' );
+__( 'Phoenix', 'continents-cities' );
 __( 'Lower Princes', 'continents-cities' );
 __( 'Maceio', 'continents-cities' );
 __( 'Managua', 'continents-cities' );

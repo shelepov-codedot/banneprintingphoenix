@@ -157,7 +157,7 @@ $total = 0;
 
                         <p>Hi,</p>
 
-                        <p>This is a custom invoice from <a href="https://bannerprintingsanfrancisco.com/">https://bannerprintingsanfrancisco.com/</a>. </p>
+                        <p>This is a custom invoice from <a href="https://bannerprintingphoenix.com/">https://bannerprintingphoenix.com/</a>. </p>
 
                         <h2>[Custom Order] (<?= $date ?>)</h2>
 
@@ -239,7 +239,7 @@ $total = 0;
             <table class="table-content__footer">
                 <tr>
                     <td align="center">
-                        <p>Banner Printing San Francisco - best price and quality - Built with WooCommerce</p>
+                        <p>Banner Printing Phoenix - best price and quality - Built with WooCommerce</p>
                     </td>
                 </tr>
             </table>

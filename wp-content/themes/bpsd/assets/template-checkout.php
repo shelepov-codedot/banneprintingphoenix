@@ -242,15 +242,15 @@ elseif (!empty($_GET['order'])):
         ];
 
         $result = json_encode($result, JSON_HEX_QUOT);
-        wp_redirect('https://bannerprintingsanfrancisco.com/cart/');
+        wp_redirect('https://bannerprintingphoenix.com/cart/');
     } else {
-        wp_redirect('https://bannerprintingsanfrancisco.com/cart/');
+        wp_redirect('https://bannerprintingphoenix.com/cart/');
     }
 ?>
     <script>
         let dataArr = JSON.stringify(<?php echo $result; ?>)
         localStorage.setItem('dataArr', dataArr)
-        location.href = 'https://bannerprintingsanfrancisco.com/cart/'
+        location.href = 'https://bannerprintingphoenix.com/cart/'
     </script>
 <?php
 else:

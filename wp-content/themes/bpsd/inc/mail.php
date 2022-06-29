@@ -2,7 +2,7 @@
 if (isset ($_POST['email']) && isset($_POST['name'])) {
     $to       = "shelepov.codedot@gmail.com";
     $from     = $_POST['email'];
-    $subject  = "Completed contact form with https://bannerprintingsanfrancisco.com/";
+    $subject  = "Completed contact form with https://bannerprintingphoenix.com/";
     $message  = "Name: ".$_POST['name']."\nEmail: ".$from."\nType: ".$_POST['type']."\nMessage: ".$_POST['message'];
     $boundary = md5(date('r', time()));
     $filesize = '';

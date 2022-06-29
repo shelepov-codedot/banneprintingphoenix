@@ -19,11 +19,10 @@ if ((is_front_page())):
             <img src="<?= $image;?>">
         </a>
         <div class="home-category__card-info">
-            <h2 class="home-category__card-title"><?= get_the_category_by_ID($args['cat_id']); ?></h2>
+            <a href="<?= get_category_link($args['cat_id']); ?>">
+                <h2 class="home-category__card-title"><?= get_the_category_by_ID($args['cat_id']); ?></h2>
+            </a>
             <p class="home-category__card-description"><?= $category_description ?></p>
-            <div class="home-category__card-buttons">
-                <a href="<?= get_category_link($args['cat_id']); ?>" class="home-category__card-btn">LEARN MORE</a>
-            </div>
         </div>
     </div>
 </li>

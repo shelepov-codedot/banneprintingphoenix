@@ -243,7 +243,7 @@ $total = 0;
             <table class="table-content__footer">
                 <tr>
                     <td align="center">
-                        <p>Banner Printing San Francisco - best price and quality - Built with WooCommerce</p>
+                        <p>Banner Printing Phoenix - best price and quality - Built with WooCommerce</p>
                     </td>
                 </tr>
             </table>

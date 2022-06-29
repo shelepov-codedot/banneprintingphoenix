@@ -919,7 +919,7 @@ jQuery(document).ready(function($) {
             if (add) {
             $(e).closest(".cart__list").find(".cart__file-list").append(`
                 <div  class="cart__file-item">
-                    <img class="cart__file-img" src=https://bannerprintingsanfrancisco.com/wp-content/themes/bpsd/assets/img/icons/${singleFile.name.split('.')[1]}.svg /> 
+                    <img class="cart__file-img" src=https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/icons/${singleFile.name.split('.')[1]}.svg /> 
                     <span class="cart__file-title">${singleFile.name}</span>
                     <div class="product-options__loaded-files-status"><div class="product-options__loaded-files-loader"><div class="ldio-oe31sprnm4">
             <div></div><div><div></div></div>

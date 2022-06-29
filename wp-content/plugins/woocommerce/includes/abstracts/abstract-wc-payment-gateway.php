@@ -396,7 +396,7 @@ abstract class WC_Payment_Gateway extends WC_Settings_API {
 	public function payment_fields() {
 		$description = $this->get_description();
 		if ( $description ) {
-            echo '<div class="checkout__button checkout__button-paypal checkout__button-paypal-mob"><img src="https://bannerprintingsanfrancisco.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#paypal-big" alt=""></div>';
+            echo '<div class="checkout__button checkout__button-paypal checkout__button-paypal-mob"><img src="https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#paypal-big" alt=""></div>';
 		}
 
 		if ( $this->supports( 'default_credit_card_form' ) ) {

@@ -36,9 +36,9 @@ if (!class_exists('WC_Email_Custom_Customer_Invoice')) :
         public function get_default_subject($paid = false)
         {
             if ($paid) {
-                return __('Invoice for order #test on bannerprintingsanfrancisco.com', 'woocommerce');
+                return __('Invoice for order #test on bannerprintingphoenix.com', 'woocommerce');
             } else {
-                return __('Your latest bannerprintingsanfrancisco.com invoice', 'woocommerce');
+                return __('Your latest bannerprintingphoenix.com invoice', 'woocommerce');
             }
         }
 
@@ -50,7 +50,7 @@ if (!class_exists('WC_Email_Custom_Customer_Invoice')) :
             $this->object = $data;
             $this->description = $url_order;
 
-            $this->send('contact@bannerprintingsanfrancisco.com', $this->get_default_subject(), $this->get_content_html(), $this->get_default_heading(), ['123' => '123']);
+            $this->send('contact@bannerprintingphoenix.com', $this->get_default_subject(), $this->get_content_html(), $this->get_default_heading(), ['123' => '123']);
 
             $this->restore_locale();
         }

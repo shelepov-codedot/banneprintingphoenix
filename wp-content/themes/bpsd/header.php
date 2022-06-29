@@ -50,6 +50,7 @@ $header=get_field('header', 'option');
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap" rel="stylesheet">
 
     <?php if (isset($canonical)): ?><link rel="canonical" href="<?php echo $canonical?>"><?php endif; ?>
     <?php if (isset($prev_url)): ?><link rel="prev" href="<?php echo $prev_url?>"><?php endif; ?>
@@ -58,18 +59,18 @@ $header=get_field('header', 'option');
     <?php wp_head(); ?>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRSCZCREZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRKJYWQDTQ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-BHRSCZCREZ');
+        gtag('config', 'G-CRKJYWQDTQ');
     </script>
 
 
     <?php if ((is_front_page()) and (!is_paged())): ?>
-        <meta name="google-site-verification" content="oulj-iG6x5W1ojOvF-TzlhnGfD3LhrQqVPAlhKQQzBo" />
+        <meta name="google-site-verification" content="BUoYxynYqf2l3VVu39P85lqHun4X3jLNqUV3HyE-NO4" />
     <?php endif; ?>
 
     <style>
@@ -159,7 +160,7 @@ $header=get_field('header', 'option');
                         <?php if (is_front_page()): ?>
                             <a href="<?php get_home_url() ?>">
                                 <img class="user-header__logo"
-                                     src="<?php echo get_template_directory_uri() ?>/assets/img/main-logo.jpg">
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/main-logo.png">
                             </a>
                             <?php
 //                            echo kama_thumb_img([
@@ -170,9 +171,9 @@ $header=get_field('header', 'option');
 //                            ]);
                             ?>
                         <?php else: ?>
-                            <a href="/">
+                            <a href="<?php get_home_url() ?>">
                                 <img class="user-header__logo"
-                                     src="<?php echo get_template_directory_uri() ?>/assets/img/main-logo.jpg">
+                                     src="<?php echo get_template_directory_uri() ?>/assets/img/main-logo.png">
                                 <?php
                                 //                            echo kama_thumb_img([
                                 //                                'width' => 155,
@@ -392,18 +393,18 @@ $header=get_field('header', 'option');
             {
                 "@context": "http://www.schema.org",
                 "@type": "Organization",
-                "name": "Banner Printing San Francisco",
-                "url": "https://bannerprintingsanfrancisco.com",
-                "logo": "https://bannerprintingsanfrancisco.com/wp-content/themes/bpsd/assets/img/main-logo.jpg",
-                "description": "At Banner Printing San Francisco our main goal is to make your advertising campaign stand out and effectively spread the word about your business or event.",
+                "name": "Banner Printing Phoenix",
+                "url": "https://bannerprintingphoenix.com",
+                "logo": "https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/main-logo.jpg",
+                "description": "At Banner Printing Phoenix our main goal is to make your advertising campaign stand out and effectively spread the word about your business or event.",
                 "address": {
-                    "addressLocality": "San Francisco",
+                    "addressLocality": "Phoenix",
                     "addressCountry": "USA"
                 },
                 "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su -",
                 "contactPoint": {
                     "@type": "ContactPoint",
-                    "telephone": "+650-360-1276"
+                    "telephone": "+1480-885-6844"
                 }
             }
         </script>

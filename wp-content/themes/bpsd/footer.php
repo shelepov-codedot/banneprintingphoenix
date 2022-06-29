@@ -86,7 +86,7 @@ $footer=get_field('footer', 'option')
             </svg>
         </div>
     </a>
-    <a href="mailto:contact@bannerprintingsanfrancisco.com" class="page-nav__email">
+    <a href="mailto:contact@bannerprintingphoenix.com" class="page-nav__email">
         <div class="page-nav__email-icon">
             <svg class="icon">
                 <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/stack/sprite.svg#email-ico"></use>

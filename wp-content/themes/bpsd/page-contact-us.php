@@ -57,9 +57,9 @@ $contact_address = get_field('contact_address');
     <div class="contact-us">
         <ul class="contact-us__info">
             <li>
-                <a href="mailto:contact@bannerprintingsanfrancisco.com">
+                <a href="mailto:<?= $contact_email; ?>">
                     <svg class="icon contact-us__info-icon">
-                        <use xlink:href="https://bannerprintingsanfrancisco.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#email-ico"></use>
+                        <use xlink:href="https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#email-ico"></use>
                     </svg>
                     <?= $contact_email; ?>
                 </a>
@@ -67,7 +67,7 @@ $contact_address = get_field('contact_address');
             <li>
                 <a href="tel:+<?= str_replace('-', '', $contact_phone) ?>">
                     <svg class="icon contact-us__info-icon">
-                        <use xlink:href="https://bannerprintingsanfrancisco.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#phone-ico"></use>
+                        <use xlink:href="https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#phone-ico"></use>
                     </svg>
                     <?= $contact_phone; ?>
                 </a>
@@ -75,7 +75,7 @@ $contact_address = get_field('contact_address');
             <li>
                 <a href="#">
                     <svg class="icon contact-us__info-icon">
-                        <use xlink:href="https://bannerprintingsanfrancisco.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#location-ico"></use>
+                        <use xlink:href="https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/stack/sprite.svg#location-ico"></use>
                     </svg>
                     <?= $contact_address; ?>
                 </a>

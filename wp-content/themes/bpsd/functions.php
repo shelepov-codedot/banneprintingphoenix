@@ -670,6 +670,14 @@ function wcpdf_a6_packing_slips($paper_format, $template_type) {
 
     return $paper_format;
 }
+
+//Disable JetPack notes module
+add_action('admin_init', 'rm34_jetpack_deactivate_modules');
+function rm34_jetpack_deactivate_modules() {
+    if (class_exists('Jetpack') && Jetpack::is_module_active('notes')) {
+        Jetpack::deactivate_module('notes');
+    }
+}
 //add_action( 'woocommerce_before_calculate_totals', 'add_custom_price', 1000, 1);
 //function add_custom_price( $cart ) {
 //    if ( is_admin() && ! defined( 'DOING_AJAX' ) )
