@@ -1,0 +1,36 @@
+[25-Dec-2021 18:04:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php on line 10
+[30-Dec-2021 00:15:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php on line 10
+[01-Jan-2022 14:31:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php on line 10
+[03-Jan-2022 04:57:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php on line 10
+[05-Jan-2022 17:39:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php on line 10
+[06-Jan-2022 14:12:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/wp-content/themes/bpsd/404.php on line 10
+[16-Mar-2022 05:28:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/bannerprintinglosangeles.com/wp-content/themes/bpsd/sucess-page.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/bannerprintinglosangeles.com/wp-content/themes/bpsd/sucess-page.php on line 3
+[16-Mar-2022 05:32:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/bannerprintinglosangeles.com/wp-content/themes/bpsd/sucess-page.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/bannerprintinglosangeles.com/wp-content/themes/bpsd/sucess-page.php on line 3
+[16-Mar-2022 05:32:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/w1dk8wml86vv/public_html/bannerprintinglosangeles.com/wp-content/themes/bpsd/sucess-page.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/w1dk8wml86vv/public_html/bannerprintinglosangeles.com/wp-content/themes/bpsd/sucess-page.php on line 3

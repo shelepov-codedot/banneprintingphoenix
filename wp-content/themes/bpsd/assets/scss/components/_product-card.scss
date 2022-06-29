@@ -1,0 +1,136 @@
+.product-card {
+  width: 130px !important;
+  height: 205px;
+  box-shadow: 0px 1.28333px 3.85px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+  position: relative;
+  background-color: white;
+
+  @include desktop {
+    width: 203px !important;
+    height: 320px;
+  }
+
+  &__image {
+    width: 111px;
+    height: 81px;
+
+    @include desktop {
+      width: 173px;
+      height: 126px;
+    }
+  }
+
+  &__rating {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #cddde2;
+    width: calc(100% - 20px);
+    text-align: center;
+    padding-bottom: 6px;
+
+    @include desktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__rating-star {
+    position: relative;
+    margin: auto;
+    width: 60px;
+    height: 12px;
+    background-image: url("../img/stack/sprite.svg#star");
+    background-position-y: center;
+
+    @include desktop {
+      width: 85px;
+      height: 17px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      background-image: url("../img/stack/sprite.svg#star-color");
+      background-size: auto 100%;
+      background-repeat-y: no-repeat;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $text-color;
+    margin-bottom: 5px;
+    text-align: center;
+
+    @include desktop {
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 19px;
+      margin-bottom: 25px;
+    }
+  }
+  &__price {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+    color: $text-color;
+
+    @include desktop {
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    & b {
+      margin-left: 5px;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 22px;
+
+      @include desktop {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+  &__like {
+    display: block;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+
+    background-image: url("../img/stack/sprite.svg#heart-empty");
+
+    &.is-active {
+      background-image: url("../img/stack/sprite.svg#heart-feeled");
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  $width: 12px * $i * 0.5;
+  .star-#{$i*0.5*10}:after {
+    width: $width;
+  }
+  $i: $i + 0.5;
+}
+
+@include desktop {
+  @for $i from 0 through 10 {
+    $width: 17px * $i * 0.5;
+    .star-#{$i*0.5*10}:after {
+      width: $width;
+    }
+    $i: $i + 0.5;
+  }
+}

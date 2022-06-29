@@ -1,0 +1,75 @@
+
+.page-nav{
+
+  &__scroll {
+    position: fixed;
+    top: 530px;
+    width: 28px;
+    height: 28px;
+    right: 10px;
+    z-index: 1000;
+    cursor: pointer;
+
+    @include small-phones{
+      top: 490px;
+    }
+
+    @include tablets {
+      right: 50px;
+    }
+  }
+
+  &__chat-icon {
+    position: fixed;
+    top: 530px;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+
+    @include small-phones{
+      top: 490px;
+    }
+
+    @include tablets {
+      right: 38px;
+      left: auto;
+      top: 435px;
+    }
+  }
+  &__phone-icon {
+    position: fixed;
+    top: 460px;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+
+    @include small-phones{
+      top: 425px;
+    }
+
+    @include tablets {
+      display: none;
+    }
+  }
+  &__email-icon {
+    position: fixed;
+    top: 390px;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+
+    @include small-phones{
+      top: 360px;
+    }
+
+    @include tablets {
+      display: none;
+    }
+  }
+}

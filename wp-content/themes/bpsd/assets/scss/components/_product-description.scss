@@ -1,0 +1,128 @@
+.product-description {
+  &__top {
+    height: 49px;
+    background-color: #eef5f7;
+    display: flex;
+    justify-content: center;
+  }
+  &__title {
+    text-align: center;
+    padding-top: 15px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    color: #9baaae;
+    cursor: pointer;
+
+    @include desktop {
+      color: $text-color;
+      width: 570px;
+    }
+  }
+  .is-active {
+    border-bottom: 2px solid #9baaae;
+    color: $text-color;
+
+    @include desktop {
+      border: none;
+    }
+  }
+
+  &__wrap {
+    font-weight: 500;
+    font-size: 13px;
+    min-height: max-content;
+    display: flex;
+    justify-content: center;
+
+    @include desktop {
+      justify-content: initial;
+      flex-direction: row-reverse;
+    }
+  }
+  &__text {
+    @include desktop {
+      width: 50%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 24px 0;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    p {
+      margin: 16px 0;
+      font-size: 13px;
+    }
+  }
+  &__upload {
+    display: none;
+    background-color: white;
+    height: inherit;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    @include desktop {
+      display: block;
+      position: relative;
+    }
+
+    @include desktop {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &_box {
+      display: flex;
+      justify-content: center;
+      width: 289px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    &_text {
+      font-weight: 500;
+      font-size: 15px;
+      color: $text-color;
+      width: 90px;
+      margin-right: 100px;
+      margin-left: 55px;
+      position: relative;
+      text-align: center;
+      padding-top: 15px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: -45px;
+        top: 2px;
+        background-image: url("../img/stack/sprite.svg#file-plus");
+      }
+    }
+    &_icon {
+      width: 22px;
+      height: 22px;
+    }
+    &_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: #cddde2;
+      border-radius: 6px;
+      width: 44px;
+      height: 44px;
+
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.process-block {
+  &__list {
+    list-style: none;
+    padding-left: 0;
+
+    @include desktop {
+      margin-top: 90px;
+    }
+  }
+  &__item {
+    height: 192px;
+    position: relative;
+    z-index: 13;
+
+    &:nth-child(odd) {
+      margin-left: 13%;
+    }
+
+    @include tablets {
+      margin-bottom: 33px;
+    }
+    @include desktop {
+      &:nth-child(odd) {
+        margin-left: 25%;
+      }
+      &:nth-child(even) {
+        margin-left: 12%;
+      }
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: $text-color;
+    position: relative;
+    z-index: 13;
+
+    @include desktop {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  &__counter {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 13;
+
+    & span {
+      position: absolute;
+      z-index: 10;
+      width: 140px;
+      height: 140px;
+      background: #eef5f7;
+      color: #cddde2;
+      font-weight: bold;
+      font-size: 100px;
+      text-align: center;
+      top: 0;
+      left: 0;
+      padding-top: 15px;
+    }
+  }
+  &__info {
+    position: absolute;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: $text-color;
+    margin-left: 160px;
+
+    @include desktop {
+      font-size: 15px;
+      line-height: 22px;
+      margin-left: 220px;
+    }
+  }
+}

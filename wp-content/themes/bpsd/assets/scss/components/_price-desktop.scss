@@ -1,0 +1,38 @@
+.price-desktop {
+  display: none;
+  @include desktop {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__wrapper {
+    width: 320px;
+    height: min-content;
+    background-color: #eef5f7;
+    border-radius: 6px;
+    padding-bottom: 10px;
+  }
+
+  .product-action {
+    display: block;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .product__quantity {
+    display: block;
+  }
+  .product__button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .product-options__subtitle {
+    display: block;
+  }
+  .product-options__upload {
+    display: block;
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,129 @@
+.user-header {
+  background-color: $main-color;
+  z-index: 11;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+
+  &__search {
+    width: 100%;
+    background-color: $main-color;
+    border: 1.2px solid #9baaae;
+    border-radius: 6px;
+    padding: 9px 0px 9px 10px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #9baaae;
+    font-weight: 500;
+    height: 36px;
+    margin-bottom: 16px;
+
+    @include tablets {
+      width: 100%;
+      display: block;
+      height: 36px;
+    }
+
+    &-wrap {
+      display: flex;
+      padding-top: 10px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6px;
+    color: $text-color;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+
+    @include tablets {
+      padding-top: 3px;
+    }
+  }
+
+  &__contacts {
+    @include tablets {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 11px;
+      flex-direction: column;
+    }
+  }
+
+  &__contacts-wrap {
+    flex-grow: 1;
+
+    @include tablets {
+      padding-top: 8px;
+      max-width: 277px;
+    }
+
+    @include desktop {
+      max-width: 311px;
+    }
+  }
+
+  &__mail {
+    display: none;
+  }
+  &__logo {
+    width: auto;
+    height: 70px !important;
+
+    @include small-phones{
+      height: 47px !important;
+    }
+
+    @include tablets {
+      width: 154px;
+      height: 84px !important;
+    }
+  }
+
+  &__number {
+    @include tablets {
+      display: none;
+    }
+  }
+
+  &__semi-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-right: 22px;
+
+    @include tablets {
+      margin: 0;
+      align-self: flex-start;
+    }
+  }
+  &__button {
+    display: none;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &-icon{
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+    }
+
+  }
+}

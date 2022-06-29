@@ -1,0 +1,32 @@
+.breadcrumb {
+  padding-top: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  overflow: auto;
+
+  & a {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #9baaae;
+    margin-right: 19px;
+    position: relative;
+    display: block;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 5px;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid #9baaae;
+      border-right: 2px solid #9baaae;
+      border-radius: 1px;
+      transform: rotate(45deg);
+      right: -10px;
+    }
+  }
+}

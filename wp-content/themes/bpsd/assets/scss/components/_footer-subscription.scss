@@ -1,0 +1,35 @@
+.footer-subscription {
+  max-width: 596px;
+  margin: auto;
+  display: flex;
+  margin-bottom: 59px;
+
+  &__button {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding: 11px 10px;
+    border: none;
+    background-color: $main-red;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    color: white;
+
+    &:hover {
+      background-color: #d42c20;
+    }
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    flex-grow: 1;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #9baaae;
+    border: none;
+  }
+}

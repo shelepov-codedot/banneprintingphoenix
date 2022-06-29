@@ -1,0 +1,176 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.home {
+  &__section-title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: $text-color;
+    margin-bottom: 30px;
+    margin-top: 0;
+    position: relative;
+    padding-left: 40px;
+
+    @include tablets {
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      padding-left: 50px;
+    }
+
+    @include desktop {
+      padding-left: 266px;
+    }
+
+    &::before {
+      position: absolute;
+      content: " ";
+      width: 40px;
+      height: 3px;
+      border-radius: 2px;
+      top: calc(50% - 1.5px);
+      left: -15px;
+      background-color: $main-red;
+
+      @include tablets {
+        left: -10px;
+      }
+
+      @include desktop {
+        left: 198px;
+      }
+    }
+  }
+
+  &__category-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 30px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    @include tablets {
+      grid-template-columns: 1fr 1fr 1fr;
+      width: min-content;
+      margin: 0 auto;
+      grid-row-gap: 40px;
+      grid-column-gap: 40px;
+    }
+  }
+
+  &__categories {
+    padding-top: 40px;
+
+    @include tablets {
+      padding-top: 50px;
+    }
+
+    .text-block {
+      margin-top: 88px;
+
+      @include tablets {
+        margin-top: 106px;
+      }
+    }
+
+    .home__section-title {
+      @include tablets {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__products {
+    position: relative;
+    margin-top: 50px;
+
+    @include tablets {
+      margin-top: 100px;
+    }
+
+    .container {
+      position: relative;
+      z-index: 5;
+      width: 90vw;
+    }
+
+    &::after {
+      position: absolute;
+      width: 100%;
+      content: " ";
+      height: 151px;
+      background: #eef5f7;
+      top: 40px;
+      z-index: 3;
+
+      @include desktop {
+        height: 280px;
+        top: -50px;
+      }
+    }
+  }
+
+  &__products-list {
+    padding-left: 0;
+
+    .product-card {
+      margin-left: 4px;
+      margin-right: 4px;
+      margin-bottom: 10px;
+      margin-top: 25px;
+
+      @include tablets {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
+      @include desktop {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    .slick-next {
+      right: -10px;
+
+      @include tablets {
+        right: -5vw;
+      }
+    }
+
+    .slick-prev {
+      left: -10px;
+
+      @include tablets {
+        left: -5vw;
+      }
+    }
+  }
+  &__process {
+    margin: 0 auto;
+    margin-top: 61px;
+
+    @include tablets {
+      margin-top: 136px;
+    }
+  }
+
+  &__seo-text {
+    .text-block {
+      margin-bottom: 50px;
+
+      @include tablets {
+        margin-bottom: 96px;
+      }
+    }
+  }
+}
+
+#home-hello {
+  display: flex;
+  justify-content: center;
+}

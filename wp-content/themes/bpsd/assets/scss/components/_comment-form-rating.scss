@@ -1,0 +1,28 @@
+
+.comment-form-rating{
+
+  &__stars{
+    margin: 0;
+    display: flex;
+    a{
+      cursor: pointer;
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      font-size: 0;
+      line-height: 0;
+      background-image: url("../img/stack/sprite.svg#star");
+      background-size: auto 100%;
+      background-repeat-y: no-repeat;
+
+      &:hover,
+      &:active,
+      &.is-active{
+        background-image: url("../img/stack/sprite.svg#star-color");
+      }
+    }
+  }
+
+
+
+}

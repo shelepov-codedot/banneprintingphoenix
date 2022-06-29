@@ -1,0 +1,74 @@
+.user-nav {
+  display: flex;
+  position: relative;
+
+  &__cart-count{
+    position: absolute;
+    margin-left: 5px;
+  }
+
+  &__button {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablets {
+      height: 44px;
+      width: auto;
+      padding: 11px;
+      background-color: #cddde2;
+      border-radius: 4px;
+    }
+
+    &:not(:last-child) {
+      @include tablets {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+
+    @include tablets {
+      margin: 0;
+      margin-right: 8px;
+      display: block;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 22px;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.is-active {
+      &::after {
+        content: " ";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $main-red;
+        top: -6px;
+        right: -6px;
+      }
+    }
+
+    .icon {
+      stroke: #1a1818;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+}

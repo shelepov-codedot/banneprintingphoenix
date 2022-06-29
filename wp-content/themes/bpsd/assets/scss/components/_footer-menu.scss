@@ -1,0 +1,120 @@
+.footer-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 25px;
+
+  @include tablets {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .menu-item {
+    list-style: none;
+
+    & a {
+      display: block;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 19px;
+      text-align: left;
+      text-transform: uppercase;
+      color: white;
+
+      &:hover {
+        color: #becdd1;
+      }
+    }
+    & li:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .menu-item-has-children {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 33px;
+      @include tablets {
+        margin-bottom: 55px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 105px !important;
+
+      @include tablets {
+        margin-bottom: 55px !important;
+      }
+    }
+
+    &::after {
+      content: " \250F";
+      position: absolute;
+      width: 8px;
+      height: 13px;
+      right: 50px;
+      top: -5px;
+      color: white;
+      transform: rotate(45deg);
+      transition: transform 0.7s ease-in-out;
+
+      @include tablets {
+        display: none;
+      }
+    }
+    &.is-active {
+      margin-bottom: 60px;
+
+      &:after {
+        transform: rotate(225deg);
+        top: 10px;
+      }
+
+      .sub-menu {
+        display: block;
+      }
+    }
+  }
+
+  .sub-menu {
+    display: none;
+    padding-left: 0;
+    margin-top: 19px;
+
+    @include tablets {
+      display: block;
+    }
+
+    & a {
+      list-style: none;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 27px;
+      text-transform: uppercase;
+      text-align: left;
+      color: white;
+
+      &:hover {
+        color: #becdd1;
+      }
+    }
+  }
+
+  .contact-link a {
+    margin-left: -25px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    list-style: none;
+    letter-spacing: -0.01em;
+    text-transform: none;
+
+    @include tablets {
+      margin-left: 0;
+    }
+  }
+}

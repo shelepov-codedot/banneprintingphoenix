@@ -1,0 +1,308 @@
+.product {
+  @include desktop {
+    display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablets {
+      flex-direction: initial;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    @include desktop {
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    color: $text-color;
+    text-align: left;
+    margin-bottom: 2px;
+
+    @include tablets {
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 23px;
+      font-size: 28px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 283px;
+    margin: 0 auto;
+
+    @include tablets {
+      max-width: 336px;
+    }
+
+    @include desktop {
+      max-width: 520px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0px 0.831577px 3.32631px rgba(0, 0, 0, 0.25);
+    padding-left: 0;
+
+    @include desktop {
+      margin-bottom: 80px;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      width: 17px;
+      height: 15px;
+      top: -20px;
+      right: 0;
+      background-image: url("../img/stack/sprite.svg#product-heat");
+      background-repeat: no-repeat;
+      cursor: pointer;
+
+      @include tablets {
+        top: 5px;
+        right: unset;
+        left: 5px;
+        width: 21px;
+        height: 18px;
+      }
+    }
+    &::before {
+      @include desktop {
+        content: "ADD TO WISHLIST";
+        position: absolute;
+        color: $main-red;
+        font-weight: 500;
+        font-size: 15px;
+        top: 5px;
+        left: 30px;
+        cursor: pointer;
+        z-index: 1;
+      }
+    }
+    .slick-next {
+      right: -15px;
+      @include desktop {
+        right: -25px;
+      }
+    }
+    .slick-prev {
+      left: -15px;
+      @include desktop {
+        left: -25px;
+      }
+    }
+    .slick-arrow {
+      @include desktop {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .slick-dots {
+      list-style: none;
+      padding-left: 0;
+      position: absolute;
+      display: flex;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: -35px;
+
+      & li button {
+        border: none;
+        position: relative;
+        background-color: transparent;
+        color: transparent;
+        outline: none;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        margin-right: 5px;
+
+        &::after {
+          content: " ";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: lightgrey;
+          border-radius: 50%;
+          top: 0;
+          left: 0;
+          cursor: pointer;
+        }
+      }
+      .slick-active button::after {
+        background-color: $main-red;
+      }
+    }
+  }
+  &__quantity {
+    font-weight: bold;
+    font-size: 17px;
+    color: $text-color;
+
+    @include tablets {
+      text-align: center;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+  &__button {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+
+    @include desktop {
+      display: none;
+    }
+  }
+  &__minus {
+    background: #cddde2;
+    width: 70px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #9baaae;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background-color: $text-color;
+      top: 47%;
+      left: 39%;
+    }
+  }
+  &__numbers {
+    border-top: 1px solid #9baaae;
+    border-bottom: 1px solid #9baaae;
+    width: 134px;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+  }
+  &__plus {
+    background: #cddde2;
+    width: 70px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #9baaae;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background-color: $text-color;
+      top: 47%;
+      left: 39%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background-color: $text-color;
+      top: 47%;
+      left: 39%;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 80px;
+    overflow: auto;
+
+    &_title {
+      font-weight: bold;
+      font-size: 28px;
+      position: relative;
+      text-align: center;
+      margin-bottom: 40px;
+
+      @include tablets {
+        margin-left: 76px;
+        text-align: start;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 14px;
+          left: -55px;
+          width: 40px;
+          height: 4px;
+          background-color: $main-red;
+        }
+      }
+
+      @include desktop {
+        margin-left: 136px;
+      }
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    .number {
+      font-weight: bold;
+      font-size: 17px;
+      text-align: center;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 17px;
+      text-align: center;
+      width: 300px;
+      border-bottom: 2px solid lightgrey;
+
+      &:nth-child(1) {
+        border: none;
+      }
+    }
+    .text {
+      font-weight: 500;
+      font-size: 15px;
+      text-align: center;
+    }
+    td {
+      text-align: center;
+      padding: 5px;
+
+      &:nth-child(odd) {
+        border-right: 2px solid lightgrey;
+      }
+    }
+
+    tr:last-of-type > td {
+      border-bottom: 2px solid lightgrey;
+    }
+    tr:last-of-type > td:first-of-type {
+      border-bottom: none;
+    }
+  }
+}

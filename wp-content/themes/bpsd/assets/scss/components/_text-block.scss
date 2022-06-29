@@ -1,0 +1,43 @@
+.text-block {
+  text-align: start;
+
+  @include tablets {
+    width: 768px;
+    text-align: start;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: $text-color;
+    margin: 0;
+    margin-bottom: 33px;
+    padding-top: 33px;
+    text-align: center;
+
+    @include tablets {
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: $text-color;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @include tablets {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

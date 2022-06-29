@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// @type List
+$text-font-stack: "FuturaBook", "Helvetica Neue Light", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif !default;
+$title-font-stack: "Helvetica Neue Light", "Helvetica Neue", "Helvetica",
+  "Arial", sans-serif !default;
+
+/// @type Color
+$text-color: #1a1818 !default;
+
+$main-color: #eef5f7;
+$smain-color: #cddde2;
+$main-red: #ec3c24;
+
+/// @type Color
+$white: rgb(255, 255, 255) !default;
+$dark-back: rgba(0, 0, 0, 0.5);
+
+/// @type Length
+$max-width: 1260px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px,
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: "/assets/" !default;

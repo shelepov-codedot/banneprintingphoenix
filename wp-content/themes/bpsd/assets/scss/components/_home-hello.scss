@@ -1,0 +1,77 @@
+.home-hello {
+  &__item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+
+    @include tablets {
+      background-position: center;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    line-height: 34px;
+    color: $text-color;
+    margin-bottom: 32px;
+
+    @include tablets {
+      font-size: 34px;
+      line-height: 41px;
+    }
+  }
+  &__sub-title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: $text-color;
+    width: 253px;
+    margin-bottom: 13px;
+
+    @include tablets {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  &__button {
+    cursor: pointer;
+    background-color: $main-red;
+    width: 280px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    &:hover {
+      background-color: #d42c20;
+    }
+  }
+
+  .slick-next {
+    right: 7px;
+
+    @include tablets {
+      right: 17px;
+    }
+
+    @include desktop {
+      right: 5vw;
+    }
+  }
+
+  .slick-prev {
+    left: 7px;
+
+    @include tablets {
+      left: 17px;
+    }
+
+    @include desktop {
+      left: 5vw;
+    }
+  }
+}

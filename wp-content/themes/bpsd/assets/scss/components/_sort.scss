@@ -1,0 +1,23 @@
+.sort {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+  font-size: 15px;
+  color: $text-color;
+  line-height: 40px;
+
+  &__box {
+    width: 245px;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 1px solid #9baaae;
+    border-radius: 6px;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  &__item {
+    width: 245px;
+    height: 40px;
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,60 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: -68px;
+  right: 0;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+  }
+  &__count {
+    font-weight: 500;
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 40px;
+  }
+  &__item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #9baaae;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+
+    &.is-active {
+      & a {
+        color: $text-color;
+        pointer-events: none;
+      }
+    }
+
+    &.is-next {
+      font-weight: 500;
+      background: #cddde2;
+      & a {
+        color: $text-color;
+      }
+    }
+    &.is-forward {
+      font-weight: 500;
+      border-color: #ff725f;
+      & a {
+        color: #ff725f;
+      }
+    }
+  }
+  &__link {
+    line-height: 40px;
+    color: #cddde2;
+    display: block;
+  }
+}

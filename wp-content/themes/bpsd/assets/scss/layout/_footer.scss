@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+  background-color: $text-color;
+
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: white;
+    margin-top: 0;
+  }
+  &__description {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: 53px;
+    color: white;
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+  }
+  &__wrap {
+    padding-top: 28px;
+  }
+
+  &__copyright-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-bottom: 0;
+
+  }
+
+  &__copyright-text{
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+    margin-bottom: 42px;
+  }
+
+  &__copyright-icon{
+
+    &:not(:last-of-type){
+      margin-right: 10px;
+    }
+    .icon{
+      width: 28px;
+      height: 18px;
+      background: #f2f2f2;
+      border-radius: 3px;
+
+    }
+  }
+
+}

@@ -1,0 +1,124 @@
+.category-list {
+  &__wrap {
+    .category-card {
+      box-shadow: none;
+      width: 290px;
+      height: auto;
+
+      @include tablets {
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+        width: 220px;
+        height: 260px;
+        margin: 0 auto;
+        max-height: unset;
+      }
+
+      &__link {
+        flex-direction: initial;
+        align-items: initial;
+        position: relative;
+        display: grid;
+        grid-template-areas:
+          "a b"
+          "a c";
+        grid-column-gap: 15px;
+
+        @include tablets {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 15px;
+        }
+      }
+      &__image {
+        order: -1;
+        width: 111px !important;
+        max-width: unset !important;
+        grid-area: a;
+
+        @include tablets {
+          order: 0;
+          width: 185px !important;
+        }
+      }
+      &__title {
+        font-weight: bold;
+        font-size: 20px;
+        padding-top: 5px;
+        text-align: start;
+        grid-area: b;
+
+        @include tablets {
+          padding-left: 0;
+          padding-top: 0;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+      }
+      &__price {
+        top: 115px;
+        right: 0px;
+        font-size: 10px;
+        grid-area: c;
+        text-align: start;
+
+        @include tablets {
+          position: relative;
+          top: 0;
+          font-weight: 500;
+          font-size: 13px;
+        }
+
+        & b {
+          font-weight: 600;
+          font-size: 15px;
+
+          @include tablets {
+            font-weight: bold;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+
+    .home__category-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include tablets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: min-content;
+        margin: 0 auto;
+        grid-row-gap: 50px;
+        grid-column-gap: 30px;
+      }
+    }
+    .home__products-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 9px;
+      grid-row-gap: 9px;
+      justify-items: center;
+      width: 265px;
+      margin: 0 auto;
+
+      @include tablets {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 20px;
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        width: auto;
+      }
+      @include desktop {
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+      }
+
+      .product-card {
+        margin: 0;
+      }
+    }
+  }
+}
