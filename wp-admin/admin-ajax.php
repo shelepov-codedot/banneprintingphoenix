@@ -377,7 +377,7 @@ function post_upload_file(){
         }
     }
 
-    $data = $error ? array('error' => 'Ошибка загрузки файлов.') : array('files' => $files);
+    $data = $error ? array('error' => 'File upload error.') : array('files' => $files);
 
     echo json_encode($data);
 
@@ -521,7 +521,9 @@ function admin_generation_order() {
 function admin_send_order_on_mail($user_email, $data, $order_href) {
     if (isset($user_email)) {
         $new_order = WC()->mailer()->get_emails();
+        //Send user notification
         $new_order['WC_Email_Customer_Custom_Invoice']->trigger($user_email, $data, $order_href);
+        //Send admin notification
         $new_order['WC_Email_Custom_Customer_Invoice']->trigger($data, $order_href);
     }
 }

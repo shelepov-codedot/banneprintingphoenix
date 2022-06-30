@@ -171,7 +171,7 @@ $header=get_field('header', 'option');
 //                            ]);
                             ?>
                         <?php else: ?>
-                            <a href="<?php get_home_url() ?>">
+                            <a href="/">
                                 <img class="user-header__logo"
                                      src="<?php echo get_template_directory_uri() ?>/assets/img/main-logo.png">
                                 <?php
@@ -240,6 +240,9 @@ $header=get_field('header', 'option');
                             </div>
                         </a>
                         <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="user-nav__button user-nav__button-cart">
+                            <?php if (0 !== WC()->cart->get_cart_contents_count()): ?>
+                                <p class="user-nav__text is-desktop"><?= WC()->cart->get_cart_contents_count() ?></p>
+                            <?php endif; ?>
                             <div class="user-nav__icon is-active">
                                 <span class="is-mobile user-nav__cart-count"><?= WC()->cart->get_cart_contents_count() ?></span>
                                 <svg class="icon ">

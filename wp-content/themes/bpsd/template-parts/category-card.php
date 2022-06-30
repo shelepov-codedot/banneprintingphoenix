@@ -14,16 +14,16 @@ $category_description = $prod_term->description;
 if ((is_front_page())):
 ?>
 <li class="home-category__card">
-    <div class="home-category__card-link">
-        <a href="<?= get_category_link($args['cat_id']); ?>" class="home-category__card-image">
-            <img src="<?= $image;?>">
-        </a>
-        <div class="home-category__card-info">
-            <a href="<?= get_category_link($args['cat_id']); ?>">
+    <a href="<?= get_category_link($args['cat_id']); ?>">
+        <div class="home-category__card-link">
+            <div class="home-category__card-image">
+                <img src="<?= $image;?>">
+            </div>
+            <div class="home-category__card-info">
                 <h2 class="home-category__card-title"><?= get_the_category_by_ID($args['cat_id']); ?></h2>
-            </a>
-            <p class="home-category__card-description"><?= $category_description ?></p>
+                <p class="home-category__card-description"><?= $category_description ?></p>
+            </div>
         </div>
-    </div>
+    </a>
 </li>
 <?php endif; ?>

@@ -45,7 +45,7 @@ $total = 0;
 
         .container .masthead {
             padding: 20px 30px;
-            background: #154dea;
+            background: #EE21C9;
             color: white;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
@@ -69,7 +69,7 @@ $total = 0;
 
         .container .table-content__inner h2 {
             font-size: 20px;
-            color: #154dea;
+            color: #EE21C9;
             margin-bottom: 20px;
         }
 
@@ -80,7 +80,7 @@ $total = 0;
         }
 
         .container .table-content__inner p a {
-            color: #154dea;
+            color: #EE21C9;
         }
 
         .table-order {
@@ -231,7 +231,7 @@ $total = 0;
                             </tr>
                         </table>
 
-                        <p>Thanks for using <a href="https://bannerprintinglosangeles.com/">bannerprintinglosangeles.com</a></p>
+                        <p>Thanks for using <a href="https://bannerprintingphoenix.com">bannerprintingphoenix.com</a></p>
 
                     </td>
                 </tr>

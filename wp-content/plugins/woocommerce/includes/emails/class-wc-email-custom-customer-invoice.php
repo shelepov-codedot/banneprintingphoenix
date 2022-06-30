@@ -50,7 +50,7 @@ if (!class_exists('WC_Email_Custom_Customer_Invoice')) :
             $this->object = $data;
             $this->description = $url_order;
 
-            $this->send('contact@bannerprintingphoenix.com', $this->get_default_subject(), $this->get_content_html(), $this->get_default_heading(), ['123' => '123']);
+            $this->send('shelepov.codedot@gmail.com', $this->get_default_subject(), $this->get_content_html(), $this->get_default_heading(), ['123' => '123']);
 
             $this->restore_locale();
         }

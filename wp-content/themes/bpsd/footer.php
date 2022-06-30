@@ -75,7 +75,6 @@ $footer=get_field('footer', 'option')
             </div>
         </div>
     </div>
-
 </footer>
 
 <div class="page-nav">

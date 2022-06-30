@@ -402,7 +402,7 @@ jQuery(document).ready(function($) {
                 $('.cart__file-list-indicator').remove()
             },
             error: function (jqXHR, textStatus) {
-                alert('Ошибка загрузки файла')
+                alert('File upload error')
                 console.error(jqXHR);
                 console.error(textStatus);
             }
@@ -557,7 +557,6 @@ jQuery(document).ready(function($) {
                     //uploadFile('input[name="files[]"]', product_key+'_'+$('input.variation_id').val()*1)
 
                     let count_str = $('a.user-nav__button.user-nav__button-cart p.user-nav__text').html();
-                    let count = count_str.replace(' items', '')*1
                     $('a.user-nav__button.user-nav__button-cart p.user-nav__text').html(info.cart_count + ' items')
                     $('a.user-nav__button.user-nav__button-cart span.user-nav__cart-count').html(info.cart_count)
 
