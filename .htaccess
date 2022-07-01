@@ -1,24 +1,24 @@
-#<ifModule mod_headers.c>
-#Header set Connection keep-alive
-#</ifModule>
-#<IfModule mod_rewrite.c>
+<ifModule mod_headers.c>
+Header set Connection keep-alive
+</ifModule>
+<IfModule mod_rewrite.c>
 # url без / на url c /
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_URI} !\..{1,10}$
-#RewriteCond %{REQUEST_URI} !(.*)/$
-#RewriteRule ^(.*)$ https://bannerprintingphoenix.com/$1/ [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\..{1,10}$
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://bannerprintingphoenix.com/$1/ [L,R=301]
 
 # без .html
-#RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-#RewriteRule ^ /%1 [NC,L,R]
-#RewriteCond %{REQUEST_FILENAME}.html -f
-#RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
 # без верхнего регистра
-#RewriteCond %{REQUEST_URI} [A-Z]
-#RewriteCond %{REQUEST_FILENAME} !-s
-#RewriteRule (.*) rewrite-strtolower.php?rewrite-strtolower-url=$1 [QSA,L]
-#</IfModule>
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule (.*) rewrite-strtolower.php?rewrite-strtolower-url=$1 [QSA,L]
+</IfModule>
 
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
