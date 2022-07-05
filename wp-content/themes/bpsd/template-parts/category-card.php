@@ -20,7 +20,7 @@ if ((is_front_page())):
                 <img src="<?= $image;?>">
             </div>
             <div class="home-category__card-info">
-                <h2 class="home-category__card-title"><?= get_the_category_by_ID($args['cat_id']); ?></h2>
+                <h2 class="home-category__card-title"><?= ucwords(mb_strtolower(get_the_category_by_ID($args['cat_id']))); ?></h2>
                 <p class="home-category__card-description"><?= $category_description ?></p>
             </div>
         </div>

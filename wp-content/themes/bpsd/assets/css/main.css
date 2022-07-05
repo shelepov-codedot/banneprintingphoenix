@@ -5574,7 +5574,7 @@ ul {
         width: 320px; } }
     @media screen and (min-width: 768px) {
       .checkout__box .cart__box-label .cart__wrap {
-        background-color: #fffdf5; } }
+        background-color: var(--main-bg); } }
   .checkout__link-back {
     font-size: 13px;
     font-weight: 500;
@@ -6449,7 +6449,7 @@ ul {
   width: 100%;
   margin-bottom: 62px;
   padding-top: 20px;
-  background-color: #fffdf5; }
+  background-color: var(--main-bg); }
   @media screen and (min-width: 768px) {
     .total-checkout {
       height: unset;
@@ -7387,6 +7387,7 @@ ul {
   font-weight: bold;
   font-size: 15px;
   background-color: var(--main-blue);
+  border-radius: 50px;
   color: white;
   border: none;
   text-align: center;
@@ -7399,6 +7400,7 @@ ul {
   font-weight: bold;
   font-size: 15px;
   background-color: var(--main-gray);
+  border-radius: 50px;
   color: #1a1818;
   border: none;
   text-align: center;
