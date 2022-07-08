@@ -113,7 +113,6 @@ echo '</pre>';*/
                                 <div class="cart__file-list">
                                 <?php
                                 $customer_folder = WC()->session->get( 'customer_folder' );
-
                                 $dir = $_SERVER['DOCUMENT_ROOT'] . '/user_print/'.$customer_folder.'/';
                                 $dh = opendir($dir);
                                 $file = false;
@@ -133,34 +132,36 @@ echo '</pre>';*/
                                     }
 
 
-                                while (false !== ($filename = readdir($dh))):
-                                    if ($filename !== '.' && $filename !== '..'):
-                                        $file = true;
+                                    while (false !== ($filename = readdir($dh))):
+                                        if ($filename !== '.' && $filename !== '..'):
+                                            $file = true;
 
-                                        $str_file = explode('_', $filename);
-                                        if (isset($customer_folder)) {
-                                            if (array_key_exists(array_search($product['key'], $str_file), $str_file) == true):?>
+                                            $str_file = explode('_', $filename);
 
-                                                <div class="cart__file-item">
-                                                    <img class="cart__file-img" src="<?php
-                                                    $img = explode('.', $filename);
-                                                    echo get_template_directory_uri() . '/assets/img/icons/' . end($img) . '.svg';
-                                                    ?>">
-                                                    <span class="cart__file-title"><?= str_replace($customer_id.'_'.$product_key.'_'.$product['variation_id'] . '_', '', $filename); ?></span>
-                                                    <div class="cart__file-buttons">
-                                                        <div class="cart__file-btn-del" data-file="<?= $filename ?>">
-                                                            <svg class="icon">
-                                                                <use
-                                                                        xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/stack/sprite.svg#trash">
-                                                                </use>
-                                                            </svg>
+                                            if (isset($customer_folder)) {
+                                                if (array_key_exists(array_search($product['key'], $str_file), $str_file) == true):?>
+
+                                                    <div class="cart__file-item">
+                                                        <img class="cart__file-img" src="<?php
+                                                        $img = explode('.', $filename);
+                                                        echo get_template_directory_uri() . '/assets/img/icons/' . end($img) . '.svg';
+                                                        ?>">
+                                                        <span class="cart__file-title"><?= str_replace($customer_id.'_'.$product_key.'_'.$product['variation_id'] . '_', '', $filename); ?></span>
+                                                        <div class="cart__file-buttons">
+                                                            <div class="cart__file-btn-del" data-file="<?= $filename ?>">
+                                                                <svg class="icon">
+                                                                    <use
+                                                                            xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/stack/sprite.svg#trash">
+                                                                    </use>
+                                                                </svg>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                            <?php
-                                            endif;
-                                        }
+                                                <?php
+                                                endif;
+                                            }
+
                                         endif;
                                     endwhile;
                                 }

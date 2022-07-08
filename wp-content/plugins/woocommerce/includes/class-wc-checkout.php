@@ -1170,7 +1170,8 @@ class WC_Checkout {
 
                 $products = WC()->cart->get_cart();
                 $customer_id = WC()->session->get_customer_id();
-                $dir = $_SERVER['DOCUMENT_ROOT'] . '/user_print/'.$customer_id;
+                $customer_folder = WC()->session->get( 'customer_folder' );
+                $dir = $_SERVER['DOCUMENT_ROOT'] . '/user_print/'.$customer_folder;
 
                 $item = 1;
                 foreach ($products as $product_key => $product) {

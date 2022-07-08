@@ -43,6 +43,30 @@ $row_class    = apply_filters( 'woocommerce_admin_html_order_item_class', ! empt
 		<?php do_action( 'woocommerce_before_order_itemmeta', $item_id, $item, $product ); ?>
 		<?php require __DIR__ . '/html-order-item-meta.php'; ?>
 		<?php do_action( 'woocommerce_after_order_itemmeta', $item_id, $item, $product ); ?>
+
+        <?php
+        $order_name = 'order_' . $item->get_order_id();
+        $dir = $_SERVER['DOCUMENT_ROOT'] . '/user_print/' . $order_name .'/';
+        $dh = opendir($dir);
+
+//        echo $order_name;
+
+        if (file_exists($dir)) {
+            while (false !== ($filename = readdir($dh))){
+                if ($filename != '.' && $filename != '..') {
+                    $new_filename = explode('_', $filename);
+                    $variation_id = $item->get_variation_id();
+
+                    if (array_key_exists(array_search($variation_id, $new_filename), $new_filename) == true) {
+                        $name = end($new_filename);
+
+                        echo '<br>';
+                        echo 'File: <a href="/user_print/'.$order_name.'/'.$filename.'" download>'.$name.'</a>';
+                    }
+                }
+            }
+        }
+        ?>
 	</td>
 
 	<?php do_action( 'woocommerce_admin_order_item_values', $product, $item, absint( $item_id ) ); ?>
