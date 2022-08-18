@@ -178,7 +178,7 @@ echo '</pre>';*/
                                 </div>
                             </div>
                         </div>
-                        <input name="files[]" id="uploadFiles" type="file" style="visibility: hidden; max-width: 280px" multiple="multiple" accept=".jpeg, .psb, .png, .tiff, .pdf, .ai, .eps, .svg, .indd" data-product-id="<?php echo $product_key.'_'.$product['variation_id']; ?>" />
+                        <input name="files[]" id="uploadFiles" type="file" style="visibility: hidden; max-width: 280px" multiple="multiple" accept=".jpeg, .png, .pdf, .ai, .eps" data-product-id="<?php echo $product_key.'_'.$product['variation_id']; ?>" />
                         <div class="cart__item-upload" for="uploadFiles">upload file</div>
                         <div class="cart__item-button">
                             <?php $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $product ) : '', $product, $product_key ); ?>

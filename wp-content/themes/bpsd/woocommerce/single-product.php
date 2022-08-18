@@ -167,7 +167,7 @@ if (!empty($attribute_keys)) {
                     </div>
                 </div>
                 <div class="product-options__wrap">
-                    <input name="files[]" id="uploadFiles" type="file" style="visibility: hidden; width: 0" multiple="multiple" accept="image/jpeg, image/jpg, image/psb, image/png, image/tiff, image/pdf, image/ai, image/eps, image/svg, image/indd"/>
+                    <input name="files[]" id="uploadFiles" type="file" style="visibility: hidden; width: 0" multiple="multiple" accept=".jpeg, .png, .pdf, .ai, .eps"/>
                     <button class="product-options__upload" for="uploadFiles">upload file</button>
                 </div>
                 <input type="hidden" name="product_id" value="<?php echo get_the_ID();?>">

@@ -378,8 +378,8 @@ jQuery(document).ready(function($) {
                 var xhr = $.ajaxSettings.xhr();
                 xhr.upload.addEventListener('progress', function (evt) {
                     var percentComplete = Math.ceil(evt.loaded / evt.total * 100);
-                    console.log('Загружено ' + percentComplete + '%');
-                    console.log('Загружено ' + percentComplete + '%');
+                    console.log('Download ' + percentComplete + '%');
+                    console.log('Download ' + percentComplete + '%');
                     $('.cart__file-list-indicator').find("span").css(`width`, percentComplete + "%")
                     console.log($('.cart__file-list-indicator').find("span"))
                 }, false);
@@ -553,7 +553,7 @@ jQuery(document).ready(function($) {
                             break
                         }
                     }
-                    console.log('Загружаем файл: '+product_key+'_'+$('input.variation_id').val())
+                    console.log('Upload files: '+product_key+'_'+$('input.variation_id').val())
                     //uploadFile('input[name="files[]"]', product_key+'_'+$('input.variation_id').val()*1)
 
                     let count_str = $('a.user-nav__button.user-nav__button-cart p.user-nav__text').html();
