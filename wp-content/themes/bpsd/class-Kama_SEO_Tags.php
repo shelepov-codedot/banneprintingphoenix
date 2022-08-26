@@ -288,6 +288,10 @@ class Kama_SEO_Tags
             'after' => '',
         ];
 
+        //Seo Tags from admin
+        $term = get_queried_object();
+        $meta_data = get_field( 'metadata', $term );
+
         // 404
         if (is_404()) {
             $parts['title'] = $l10n['404'];
@@ -296,40 +300,46 @@ class Kama_SEO_Tags
             $parts['title'] = sprintf($l10n['search'], get_query_var('s'));
         } // front_page
         elseif (is_front_page()) {
-
-            if (is_page() && $parts['title'] = get_post_meta($post->ID, 'title', 1)) {
-                // $parts['title'] defined
+            if ( $meta_data['title'] ) {
+                $parts['title'] = $meta_data['title'];
             } else {
-                $parts['title'] = get_bloginfo('name', 'display');
-                if ($affter) $parts['after'] = '{{description}}';
+                if (is_page() && $parts['title'] = get_post_meta($post->ID, 'title', 1)) {
+                    // $parts['title'] defined
+                } else {
+                    $parts['title'] = get_bloginfo('name', 'display');
+                    if ($affter) $parts['after'] = '{{description}}';
+                }
             }
         } // singular
         elseif (is_singular() || (is_home() && !is_front_page()) || (is_page() && !is_front_page())) {
+            if ( $meta_data['title'] ) {
+                $parts['title'] = $meta_data['title'];
+            } else {
+                $parts['title'] = get_post_meta($post->ID, 'title', 1);
 
-            $parts['title'] = get_post_meta($post->ID, 'title', 1);
+                if (!$parts['title']) {
+                    /**
+                     * Allow to set meta title for singular type page, before the default title will be taken.
+                     *
+                     * @param string $title
+                     * @param WP_Post $post
+                     */
+                    $parts['title'] = apply_filters('kama_meta_title_singular', '', $post);
 
-            if (!$parts['title']) {
-                /**
-                 * Allow to set meta title for singular type page, before the default title will be taken.
-                 *
-                 * @param string $title
-                 * @param WP_Post $post
-                 */
-                $parts['title'] = apply_filters('kama_meta_title_singular', '', $post);
+                }
 
-            }
+                if (!$parts['title']) {
+                    $parts['title'] = single_post_title('', 0);
+                }
 
-            if (!$parts['title']) {
-                $parts['title'] = single_post_title('', 0);
-            }
+                if (!is_page()) {
+                    $parts['title'] = 'Phoenix ' . $parts['title'].' printing - best price';
+                }
 
-            if (!is_page()) {
-                $parts['title'] = 'Phoenix ' . $parts['title'].' printing - best price';
-            }
+                if ($cpage = get_query_var('cpage')) {
 
-            if ($cpage = get_query_var('cpage')) {
-
-                $parts['prev'] = sprintf($l10n['compage'], $cpage);
+                    $parts['prev'] = sprintf($l10n['compage'], $cpage);
+                }
             }
 
             var_dump();
@@ -339,19 +349,21 @@ class Kama_SEO_Tags
             if ($affter) $parts['after'] = '{{blog_name}}';
         } // taxonomy
         elseif (is_category() || is_tag() || is_tax()) {
-            $term = get_queried_object();
+            if ( $meta_data['title'] ) {
+                $parts['title'] = $meta_data['title'];
+            } else {
+                $parts['title'] = $term ? get_term_meta($term->term_id, 'title', 1) : '';
 
-            $parts['title'] = $term ? get_term_meta($term->term_id, 'title', 1) : '';
-
-            if (!$parts['title']) {
-                $parts['title'] = single_term_title('', 0);
+                if (!$parts['title']) {
+                    $parts['title'] = single_term_title('', 0);
 
 
-                if (is_tax()) {
+                    if (is_tax()) {
 
 //                    echo 'prev 2';
-                    $parts['prev'] = 'Phoenix ';//get_taxonomy( $term->taxonomy )->labels->name;
-                    $parts['title'] .= ' printing - best price';
+                        $parts['prev'] = 'Phoenix ';//get_taxonomy( $term->taxonomy )->labels->name;
+                        $parts['title'] .= ' printing - best price';
+                    }
                 }
             }
 
@@ -410,7 +422,7 @@ class Kama_SEO_Tags
             if ($affter) $parts['after'] = get_bloginfo('description', 'display');
         }
 
-        if ($post->ID != 79) {
+        if ($post->ID != 79 && empty($meta_data['title'])) {
             $parts['after'] = '| bannerprintingphoenix.com';
         } else {
             $parts['after'] = '';
@@ -463,55 +475,66 @@ class Kama_SEO_Tags
 
         $desc = '';
         $need_cut = true;
+        $term = get_queried_object();
+        $meta_data = get_field( 'metadata', $term );
 
         // front
         if (is_front_page()) {
+            if ( $meta_data['description'] ) {
+                $desc = $meta_data['description'];
+            } else {
+                // когда для главной установлена страница
+                if (is_page()) {
+                    //$desc = get_post_meta($post->ID, 'description', true);
+                    $desc = 'Print Banners in Phoenix to promote your Business or Event ⚡️ Free Phoenix Delivery ✅ Call Us 📱 +1 480-885-6844 ';
+                    $need_cut = false;
+                }
 
-            // когда для главной установлена страница
-            if (is_page()) {
-                //$desc = get_post_meta($post->ID, 'description', true);
-                $desc = 'Print Banners in Phoenix to promote your Business or Event ⚡️ Free Phoenix Delivery ✅ Call Us 📱 +1 480-885-6844 ';
-                $need_cut = false;
-            }
+                if (!$desc) {
 
-            if (!$desc) {
-
-                /**
-                 * Allow to change front_page meta description.
-                 *
-                 * @param string $home_description
-                 */
-                $desc = apply_filters('home_meta_description', get_bloginfo('description', 'display'));
+                    /**
+                     * Allow to change front_page meta description.
+                     *
+                     * @param string $home_description
+                     */
+                    $desc = apply_filters('home_meta_description', get_bloginfo('description', 'display'));
+                }
             }
         } // any post
         elseif (is_singular()) {
+            if ( $meta_data['description'] ) {
+                $desc = $meta_data['description'];
+            } else {
+                if ($desc = get_post_meta($post->ID, 'description', true)) {
+                    $need_cut = false;
+                }
 
-            if ($desc = get_post_meta($post->ID, 'description', true)) {
-                $need_cut = false;
+                if (!$desc) {
+                    //$desc = $post->post_excerpt ?: $post->post_content;
+                    $desc = 'Print ' . $post->post_title . ' in Phoenix ✅ Full color printing ✅ 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
+                }
+
+                if (get_post_type($post->ID) == 'page') {
+                    $desc = $post->post_title . ' ✅ Full color printing ✅ 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
+                }
+
+                $desc = trim(strip_tags($desc));
             }
-
-            if (!$desc) {
-                //$desc = $post->post_excerpt ?: $post->post_content;
-                $desc = 'Print ' . $post->post_title . ' in Phoenix ✅ Full color printing ✅ 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
-            }
-
-            if (get_post_type($post->ID) == 'page') {
-                $desc = $post->post_title . ' ✅ Full color printing ✅ 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
-            }
-
-            $desc = trim(strip_tags($desc));
         } // any term (taxonomy element)
         elseif (($term = get_queried_object()) && !empty($term->term_id)) {
+            if ( $meta_data['description'] ) {
+                $desc = $meta_data['description'];
+            } else {
+                $desc = get_term_meta($term->term_id, 'meta_description', true);
 
-            $desc = get_term_meta($term->term_id, 'meta_description', true);
+                if (!$desc)
+                    $desc = get_term_meta($term->term_id, 'description', true);
 
-            if (!$desc)
-                $desc = get_term_meta($term->term_id, 'description', true);
-
-            $need_cut = false;
-            if (!$desc && $term->description) {
-                $desc = strip_tags($term->description);
-                $need_cut = true;
+                $need_cut = false;
+                if (!$desc && $term->description) {
+                    $desc = strip_tags($term->description);
+                    $need_cut = true;
+                }
             }
         }
 
@@ -562,8 +585,12 @@ class Kama_SEO_Tags
         if (is_category() || is_tag() || is_tax()) {
             $title = single_term_title('', 0);
 
-            if (is_tax()) {
-                $desc = 'Print '.$title.' in Phoenix for Indoor and Outdoor Advertising 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
+            if ( $meta_data['description'] ) {
+                $desc = $meta_data['description'];
+            } else {
+                if (is_tax()) {
+                    $desc = 'Print '.$title.' in Phoenix for Indoor and Outdoor Advertising 🔥 Free Phoenix Delivery 🔥 Call us 📱 +1 480-885-6844 ';
+                }
             }
         }
 
