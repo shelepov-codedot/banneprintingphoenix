@@ -159,7 +159,7 @@ $total = 0;
 
                         <p>Please find your invoice attached below with a link to make a payment when you're ready: <a href="<?= $order_href ?>">Pay for this order</a></p>
 
-                        <p>If you have any questions or concerns, please contact us at contact@bannerprintinglosangeles.com</p>
+                        <p>If you have any questions or concerns, please contact us at contact@bannerprintingphoenix.com</p>
 
                         <p>Kind regards,</p>
 

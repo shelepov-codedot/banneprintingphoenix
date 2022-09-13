@@ -392,7 +392,7 @@ jQuery(document).ready(function($) {
                     console.log(singleFile)
                     $('.product-options__loaded-files').append(`
                             <div class="product-options__loaded-files-item">
-                                <img class="product-options__loaded-files-img" src=https://bannerprintingsandiego.com/wp-content/themes/bpsd/assets/img/icons/${singleFile.name.split('.')[1]}.svg /> 
+                                <img class="product-options__loaded-files-img" src=https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/icons/${singleFile.name.split('.')[1]}.svg /> 
                                 <span class="product-options__loaded-files-title">${singleFile.name}</span>
                                 <div class="product-options__loaded-files-status product-options__loaded-files-status-modal"></div>
                             </div>`

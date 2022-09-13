@@ -31,9 +31,9 @@ class WC_Email_Customer_Custom_Invoice extends WC_Email
 
     public function get_default_subject( $paid = false ) {
         if ( $paid ) {
-            return __( 'Invoice for order #test on bannerprintinglosangeles.com', 'woocommerce' );
+            return __( 'Invoice for order #test on bannerprintingphoenix.com', 'woocommerce' );
         } else {
-            return __( 'Your latest bannerprintinglosangeles.com invoice', 'woocommerce' );
+            return __( 'Your latest bannerprintingphoenix.com invoice', 'woocommerce' );
         }
     }
 

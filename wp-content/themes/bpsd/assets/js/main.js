@@ -206,7 +206,7 @@ jQuery(document).ready(function($) {
                         console.log(singleFile)
                         $('.popup-load__inner').before(`
                             <div class="product-options__loaded-files-item">
-                                <img class="product-options__loaded-files-img" src=https://bannerprintingsandiego.com/wp-content/themes/bpsd/assets/img/icons/${singleFile.name.split('.')[1]}.svg /> 
+                                <img class="product-options__loaded-files-img" src=https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/icons/${singleFile.name.split('.')[1]}.svg /> 
                                 <span class="product-options__loaded-files-title">${singleFile.name}</span>
                                 <div class="product-options__loaded-files-status"></div>
                             </div>`
@@ -229,7 +229,7 @@ jQuery(document).ready(function($) {
 
             $('.form-upload__image').append(`
                 <div  class="product-options__loaded-files-item">
-                    <img class="product-options__loaded-files-img" src=https://bannerprintingsandiego.com/wp-content/themes/bpsd/assets/img/icons/${singleImage.name.split('.')[1]}.svg /> 
+                    <img class="product-options__loaded-files-img" src=https://bannerprintingphoenix.com/wp-content/themes/bpsd/assets/img/icons/${singleImage.name.split('.')[1]}.svg /> 
                     <span class="product-options__loaded-files-title">${singleImage.name}</span>
                     <div class="product-options__loaded-files-status"></div>
                 </div>`)
