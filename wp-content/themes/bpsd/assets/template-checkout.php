@@ -75,53 +75,55 @@ elseif (!empty($_GET['order'])):
             $_POST['product_id'] = $_POST['variation_id'] = $variation_id;
             $_POST['quantity'] = $quantity;
 
-            if ($product_item['customize']) {
+            if (isset($product_item['customize'])) {
                 $_POST['custom_variant'] = true;
 
-                if (isset($product_item['customize']['custom_weight']))
+                if (isset($product_item['customize']['custom_weight'])) {
                     $_POST['custom_weight'] = 1;
-                elseif (isset($_POST['custom_weight'])) unset($_POST['custom_weight']);
+                } elseif (isset($_POST['custom_weight'])) {
+                    unset($_POST['custom_weight']);
+                }
 
-                if (isset($product_item['customize']['width']) && isset($product_item['customize']['height']))
+                if (isset($product_item['customize']['width']) && isset($product_item['customize']['height'])) {
                     $_POST['variant'] = $product_item['customize']['width'].'-x-'.$product_item['customize']['height'];
-                elseif (isset($_POST['variant'])) unset($_POST['variant']);
+                } elseif (isset($_POST['variant'])) {
+                    unset($_POST['variant']);
+                }
 
-                if (isset($product_item['customize']['new_name']))
+                if (isset($product_item['customize']['new_name'])) {
                     $_POST['new_name'] = $product_item['customize']['new_name'];
-                elseif (isset($_POST['new_name'])) unset($_POST['new_name']);
+                } elseif (isset($_POST['new_name'])) {
+                    unset($_POST['new_name']);
+                }
 
-                if (isset($product_item['customize']['new_price']))
+                if (isset($product_item['customize']['new_price'])) {
                     $_POST['new_price'] = $product_item['customize']['new_price'];
-                elseif (isset($_POST['new_price'])) unset($_POST['new_price']);
+                } elseif (isset($_POST['new_price'])) {
+                    unset($_POST['new_price']);
+                }
 
-                $quantity = $product_item['count'];
-                $variation_id = $product_item['id'];
-
-                $product_size = explode(' ', $product_item['options'][0]['value']);
-                $custom_height = $product_size[0];
-                $custom_width = $product_size[2];
-                $custom_size = str_replace(' ', '-', $product_item['options'][0]['value']);
-                $variation = array(
-                    'custom_size' => $custom_size,
-                    'custom_height' => $custom_height,
-                    'custom_width' => $custom_width,
-                );
-                WC()->cart->add_to_cart($product_item['id'], $quantity, $variation_id, $variation, $variation);
-            } else {
+            } elseif ( !isset($product_item['customize']) ) {
                 if (isset($_POST['custom_variant'])) unset($_POST['custom_variant']);
                 if (isset($_POST['custom_weight'])) unset($_POST['custom_weight']);
                 if (isset($_POST['variant'])) unset($_POST['variant']);
                 if (isset($_POST['new_name'])) unset($_POST['new_name']);
                 if (isset($_POST['new_price'])) unset($_POST['new_price']);
-                $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity'], $_POST['variation_id']);
             }
 
-//            $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity'], $_POST['variation_id']);
+//            echo 'Product ID: ' . $_POST['product_id'];
+//            echo '<br>';
+
+            if ( $product_item['customize'] ) {
+//                echo '1';
+                $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity'], $_POST['variation_id'], $_POST['variant'], $_POST['variant']);
+            } else {
+//                echo '2';
+                $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity']);
+            }
 
             $product_new_add_cart = [];
             $products_array = [];
             foreach (WC()->cart->get_cart() as $product_key => $product):
-
                 $_product = apply_filters( 'woocommerce_cart_item_product', $product['data'], $product, $product_key );
 
                 $arrtibutes_array = [];
@@ -167,6 +169,11 @@ elseif (!empty($_GET['order'])):
             endforeach;
         }
     }
+
+//    echo '<pre>';
+//    print_r(WC()->cart->get_cart());
+//    echo '</pre>';
+//    die();
 
     if (!empty($user_data[4]['value']) && !empty($user_data[5]['value']) && !empty($user_data[7]['value']) && !empty($user_data[8]['value']) && !empty($user_data[9]['value'])) {
         WC()->cart->calculate_shipping();
