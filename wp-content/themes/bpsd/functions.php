@@ -336,8 +336,7 @@ function add_items_default_price_as_custom_data( $cart_item_data, $product_id, $
     // Set the Product default base price as custom cart item data
     $cart_item_data['discounts'] = get_discount_table($productID, $product->get_attributes());
 
-    if (isset($_POST['custom_variant'])) {
-
+    if ( $_POST['custom_variant'] == true ) {
         list($width, $height) = explode('-x-', $_POST['variant']);
 
         $cart_item_data['custom_size'] = $_POST['variant'];

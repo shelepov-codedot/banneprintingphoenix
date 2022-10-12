@@ -80,26 +80,18 @@ elseif (!empty($_GET['order'])):
 
                 if (isset($product_item['customize']['custom_weight'])) {
                     $_POST['custom_weight'] = 1;
-                } elseif (isset($_POST['custom_weight'])) {
-                    unset($_POST['custom_weight']);
                 }
 
                 if (isset($product_item['customize']['width']) && isset($product_item['customize']['height'])) {
                     $_POST['variant'] = $product_item['customize']['width'].'-x-'.$product_item['customize']['height'];
-                } elseif (isset($_POST['variant'])) {
-                    unset($_POST['variant']);
                 }
 
                 if (isset($product_item['customize']['new_name'])) {
                     $_POST['new_name'] = $product_item['customize']['new_name'];
-                } elseif (isset($_POST['new_name'])) {
-                    unset($_POST['new_name']);
                 }
 
                 if (isset($product_item['customize']['new_price'])) {
                     $_POST['new_price'] = $product_item['customize']['new_price'];
-                } elseif (isset($_POST['new_price'])) {
-                    unset($_POST['new_price']);
                 }
 
             } elseif ( !isset($product_item['customize']) ) {
@@ -113,12 +105,12 @@ elseif (!empty($_GET['order'])):
 //            echo 'Product ID: ' . $_POST['product_id'];
 //            echo '<br>';
 
-            if ( $product_item['customize'] ) {
-//                echo '1';
-                $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity'], $_POST['variation_id'], $_POST['variant'], $_POST['variant']);
-            } else {
-//                echo '2';
+            if ( !$product_item['customize'] ) {
                 $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity']);
+            } elseif ( $product_item['customize']['new_name'] ) {
+                $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity']);
+            } else {
+                $result = WC()->cart->add_to_cart($_POST['product_id'], $_POST['quantity'], $_POST['variation_id'], $_POST['variant'], $_POST['variant']);
             }
 
             $product_new_add_cart = [];
