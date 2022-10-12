@@ -1,9 +1,6 @@
 <?php
 /* Template Name: Cart */
 get_header();
-/*echo '<pre>';
-print_r(WC()->cart->get_cart());
-echo '</pre>';*/
 ?>
 
 <div class="container cart">
@@ -30,10 +27,6 @@ echo '</pre>';*/
             </div>
             <?php
             $products = WC()->cart->get_cart();
-
-//            echo '<pre>';
-//            print_r($products);
-//            echo '</pre>';
             ?>
 
             <?php
@@ -44,13 +37,6 @@ echo '</pre>';*/
                     $_product = apply_filters( 'woocommerce_cart_item_product', $product['data'], $product, $product_key );
 
                     $get_product = wc_get_product($product['product_id']);
-//            echo '<pre>';
-//            print_r($get_product);
-//            echo '</pre>';
-//            echo '<br>';
-//            echo '<pre>';
-//            print_r($product);
-//            echo '</pre>';
             ?>
             <div class="cart__wrap">
                 <ul class="cart__list">
@@ -124,8 +110,8 @@ echo '</pre>';*/
                                             $str = explode('_', $filename);
                                             $name = $str[array_key_last($str)];
 
-                                            if (array_key_exists(array_search($product['product_id'], $str), $str) == true) {
-                                                $new_name = $customer_id.'_'.$product['key'].'_'.$product['variation_id'] . '_' . $name;
+                                            if (array_key_exists(array_search($product['variation_id'], $str), $str) == true) {
+                                                $new_name = $customer_id.'_'.$product['product_id'].'_'.$product['variation_id'] . '_' . $name;
                                                 rename($dir.$filename, $dir.$new_name);
                                             }
                                         }
@@ -139,14 +125,14 @@ echo '</pre>';*/
                                             $str_file = explode('_', $filename);
 
                                             if (isset($customer_folder)) {
-                                                if (array_key_exists(array_search($product['key'], $str_file), $str_file) == true):?>
+                                                if (array_key_exists(array_search($product['variation_id'], $str_file), $str_file) == true):?>
 
                                                     <div class="cart__file-item">
                                                         <img class="cart__file-img" src="<?php
                                                         $img = explode('.', $filename);
                                                         echo get_template_directory_uri() . '/assets/img/icons/' . end($img) . '.svg';
                                                         ?>">
-                                                        <span class="cart__file-title"><?= str_replace($customer_id.'_'.$product_key.'_'.$product['variation_id'] . '_', '', $filename); ?></span>
+                                                        <span class="cart__file-title"><?= str_replace($customer_id.'_'.$product['product_id'].'_'.$product['variation_id'] . '_', '', $filename); ?></span>
                                                         <div class="cart__file-buttons">
                                                             <div class="cart__file-btn-del" data-file="<?= $filename ?>">
                                                                 <svg class="icon">
@@ -154,6 +140,7 @@ echo '</pre>';*/
                                                                             xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/stack/sprite.svg#trash">
                                                                     </use>
                                                                 </svg>
+                                                                <input type="hidden" class="cart__file-path" value="<?= $customer_folder . '/' . $filename ?>">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -178,7 +165,7 @@ echo '</pre>';*/
                                 </div>
                             </div>
                         </div>
-                        <input name="files[]" id="uploadFiles" type="file" style="visibility: hidden; max-width: 280px" multiple="multiple" accept=".jpeg, .png, .pdf, .ai, .eps" data-product-id="<?php echo $product_key.'_'.$product['variation_id']; ?>" />
+                        <input name="files[]" id="uploadFiles" type="file" style="visibility: hidden; max-width: 280px" multiple="multiple" accept=".jpeg, .png, .pdf, .ai, .eps" data-product-id="<?php echo $product['product_id'].'_'.$product['variation_id']; ?>" data-variation-id="<?= $product['variation_id'] ?>" />
                         <div class="cart__item-upload" for="uploadFiles">upload file</div>
                         <div class="cart__item-button">
                             <?php $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $product ) : '', $product, $product_key ); ?>

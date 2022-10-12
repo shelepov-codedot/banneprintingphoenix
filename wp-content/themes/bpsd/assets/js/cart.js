@@ -902,8 +902,11 @@ jQuery(document).ready(function($) {
     })
 
     function uploadFile(e) {
-        let fileUpload = $(e).get(0).files
-        let productId = $(e).data('product-id')
+        let fileUpload = $(e).get(0).files;
+        let productId = $(e).data('product-id');
+        let productInfo = productId.split('_');
+        productId = productInfo[0];
+        let productVariationId = productInfo[1];
         $(e).closest(".cart__list").find(".cart__file-list").find(".cart__file-without-items").remove()
         $.each(fileUpload, function (key, singleFile) {
             let add = true;
@@ -940,9 +943,9 @@ jQuery(document).ready(function($) {
 
         let url = '/';
         if (typeof wc_cart_params != 'undefined') {
-            url = wc_cart_params['ajax_url']+'/?action=post_upload_file&key='+productId;
+            url = wc_cart_params['ajax_url']+'/?action=post_upload_file&key=' + productId + '&variation=' + productVariationId;
         } else {
-            url = wc_checkout_params['ajax_url']+'/?action=post_upload_file&key='+productId;
+            url = wc_checkout_params['ajax_url']+'/?action=post_upload_file&key=' + productId + '&variation=' + productVariationId;
         }
 
         if (fileUpload.length > 0 && countSizeFile < 5000) {
@@ -985,18 +988,18 @@ jQuery(document).ready(function($) {
 
     $('div.cart__file-btn-del').click(function () {
         let data = {
-            file: $(this).data('file')
+            file: $(this).find('.cart__file-path').val()
         }
 
         let elem = $(this).closest('.cart__file-item')
 
         $.ajax( {
             type: 'POST',
-            url: '/wp-admin/admin-ajax.php/?action=post_upload_file',
+            url: '/wp-admin/admin-ajax.php/?action=post_delete_file',
             data: data,
             dataType: 'json',
             success: function(response) {
-                if (response['status'] == 'ok') {
+                if (response == 'deleted') {
                     // console.log(response)
                     // console.log(elem)
 

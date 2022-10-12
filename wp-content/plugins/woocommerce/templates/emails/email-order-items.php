@@ -55,9 +55,23 @@ foreach ( $items as $item_id => $item ) :
         $dh = opendir($dir);
 
         while (false !== ($filename = readdir($dh))){
-            if (strpos($filename, 'order_'.$item->get_order_id().'_'.$item->get_product_id().'_'.$item->get_variation_id().'_') !== false) {
-                echo '<br>';
-                echo 'File <a href="'.get_site_url().'/user_print/'.$filename.'" download>'.str_replace('order_'.$item->get_order_id().'_'.$item->get_product_id().'_'.$item->get_variation_id().'_', '', $filename).'</a>';
+            if (strpos($filename, 'order_'.$item->get_order_id()) !== false) {
+                $name = '';
+
+                $order_dir = $dir . $filename . '/';
+                $order_folder = scandir($order_dir);
+
+                foreach ($order_folder as $file) {
+                    if ($file !== '.' && $file !== '..') {
+                        $str = explode('_', $file);
+                        $name = $str[array_key_last($str)];
+
+                        if ( array_key_exists(array_search( $product->get_variation_id(), $str ), $str) == true ) {
+                            echo '<br>';
+                            echo 'File: <a href="'.get_site_url().'/user_print/'.$filename.'/'.$file.'" download>'.$name.'</a>';
+                        }
+                    }
+                }
             }
         }
 

@@ -180,6 +180,9 @@ add_action('wp_ajax_nopriv_post_upload_custom_file', 'post_upload_custom_file');
 add_action('wp_ajax_get_states', 'get_states');
 add_action('wp_ajax_nopriv_get_states', 'get_states');
 
+add_action('wp_ajax_post_delete_file', 'post_delete_file');
+add_action('wp_ajax_nopriv_post_delete_file', 'post_delete_file');
+
 add_action('wp_ajax_get_variants_product', 'get_variants_product');
 add_action('wp_ajax_nopriv_get_variants_product', 'get_variants_product');
 
@@ -364,7 +367,9 @@ function post_upload_file(){
     if (!is_dir($uploaddir)) mkdir($uploaddir, 0777);
 
     foreach ($_FILES as $file) {
-        if (isset($_GET['key'])) {
+        if  ( isset($_GET['key']) && isset($_GET['variation']) ) {
+            $name = $id . '_' . $_GET['key'] . '_' . $_GET['variation'] . '_' . $file['name'];
+        } elseif( isset($_GET['key']) ) {
             $name = $id . '_' . $_GET['key'] . '_' . $file['name'];
         } else {
             $name = $id . '_' . $file['name'];
@@ -419,6 +424,15 @@ function post_upload_custom_file() {
     echo json_encode($data);
 
     wp_die();
+}
+
+function post_delete_file() {
+    $delete_item = unlink('../user_print/' . $_POST['file']);
+    if ( $delete_item == true ) {
+        $status = 'deleted';
+    }
+
+    wp_die(json_encode($status));
 }
 
 function get_cart_total(){

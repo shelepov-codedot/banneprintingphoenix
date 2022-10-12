@@ -1188,7 +1188,7 @@ class WC_Checkout {
                         $file = str_replace($customer_id.'_'.$product['key'] . '_' . $product['variation_id'] . '_', '', $filename);
 
 
-                        rename($dir.$filename, $dir."order_".$order_id."_".$product['product_id']."_".$product['variation_id'].'_'.$file);
+//                        rename($dir.$filename, $dir."order_".$order_id."_".$product['product_id']."_".$product['variation_id'].'_'.$file);
                     }
                 }
 

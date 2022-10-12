@@ -1297,6 +1297,8 @@ else:
                                             if ($filename !== '.' && $filename !== '..'):
                                                 $str = explode('_', $filename);
                                                 $name = $str[array_key_last($str)];
+
+                                                if ( array_key_exists(array_search($product['variation_id'], $str), $str) == true ):
                                             ?>
 
                                                 <div class="cart__file-item">
@@ -1319,11 +1321,13 @@ else:
                                                                         xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/stack/sprite.svg#trash">
                                                                 </use>
                                                             </svg>
+                                                            <input type="hidden" class="cart__file-path" value="<?= $customer_folder . '/' . $filename ?>">
                                                         </div>
                                                     </div>
                                                 </div>
 
                                         <?php
+                                                endif;
                                             endif;
                                         endif;
                                     endwhile;

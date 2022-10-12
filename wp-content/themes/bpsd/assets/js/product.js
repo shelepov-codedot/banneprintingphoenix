@@ -352,7 +352,8 @@ jQuery(document).ready(function($) {
 
     $('input#uploadFiles').on('change', ()=>{
         const files = $('input#uploadFiles')[0].files
-        let product_id = $('input[name="product_id"]').val()
+        let product_id = $('input[name="product_id"]').val(),
+            variation_id = $('input.variation_id').val()*1;
         let data = new FormData()
         let countSizeFile = 0
 
@@ -367,7 +368,7 @@ jQuery(document).ready(function($) {
 
         $('.product-options__loaded-files-wrap').append("<div class='cart__file-list-indicator'><span style='width: 0'></span></div>")
         $.ajax({
-            url: '/wp-admin/admin-ajax.php/?action=post_upload_file&key=' + product_id,
+            url: '/wp-admin/admin-ajax.php/?action=post_upload_file&key=' + product_id + '&variation=' + variation_id,
             type: 'POST',
             cache: false,
             contentType: false,
