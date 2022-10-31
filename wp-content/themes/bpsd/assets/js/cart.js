@@ -2,6 +2,10 @@ jQuery(document).ready(function($) {
     let status_shipping_address = false;
     let taxJson = null;
 
+    if ($('input[name="no_all_data_shipping_or_billing"]').val() === '1') {
+        localStorage.removeItem('step');
+    }
+
     if (location.hash == '#step-2' && location.pathname.includes('/checkout/')) {
         let dataArr = localStorage.getItem('dataArr')
         $('.checkout__inputs.checkout__step-two input[name="dataArr"]').val(dataArr)
